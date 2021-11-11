@@ -28,8 +28,13 @@ namespace FunctionApp_web_search
         {
             // Get Document Id
             string documentId = req.Query["id"];
+<<<<<<< HEAD
             Console.WriteLine(req.Body.ToString());
             Console.WriteLine(documentId);
+=======
+            log.LogInformation(req.Body.ToString());
+            log.LogInformation(documentId);
+>>>>>>> 68af0f954422ae4a5c8d7a4cda28390233c26ccc
             // Cognitive Search 
             Uri serviceEndpoint = new Uri($"https://{searchServiceName}.search.windows.net/");
 
