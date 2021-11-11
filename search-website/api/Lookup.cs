@@ -26,10 +26,10 @@ namespace FunctionApp_web_search
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-
             // Get Document Id
-            string documentId = req.Query["id"]; ;
-
+            string documentId = req.Query["id"];
+            log.LogInformation(req.Body.ToString());
+            log.LogInformation(documentId);
             // Cognitive Search 
             Uri serviceEndpoint = new Uri($"https://{searchServiceName}.search.windows.net/");
 
